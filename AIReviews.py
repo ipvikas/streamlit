@@ -33,9 +33,9 @@ if st.button('Click to get AI Reviews'):
         tgt_text = tokenizer.batch_decode(translated, skip_special_tokens=True)
         #return tgt_text
         
-        #out = tokenizer.batch_decode(tgt_text, skip_special_tokens=True)  
-        #st.write('', str(out).strip('][\'')) 
-        st.write(tgt_text)
+        out = tokenizer.batch_decode(tgt_text, skip_special_tokens=True)  
+        st.write('', str(out).strip('][\'')) 
+        #st.write(tgt_text)
 
 
 num_return_sequences = 10
