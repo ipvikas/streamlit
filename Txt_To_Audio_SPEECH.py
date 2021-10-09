@@ -31,5 +31,6 @@ if st.button('Text to SPEECH'):#for streamlit
         t1.save("welcome.mp3")
         from IPython.display import Audio
         st.wrtite(Audio('welcome.mp3'))
+        Audio('welcome.mp3')
       
 else: pass
