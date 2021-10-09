@@ -3,9 +3,9 @@
 
 # In[ ]:
 
-! pip install sentence-splitter
-! pip install transformers
-! pip install SentencePiece
+#! pip install sentence-splitter
+#! pip install transformers
+#! pip install SentencePiece
 
 import torch
 from transformers import PegasusForConditionalGeneration, PegasusTokenizer
@@ -27,14 +27,15 @@ model, tokenizer = download_model()
 if st.button('Click to get AI Reviews'):
     if tgt_text == '':    
         st.write('Please enter text to get AI Reviews')
-    else:    
+    else:   
+        model_name = 'tuner007/pegasus_paraphrase'        
         batch = tokenizer.prepare_seq2seq_batch(tgt_text,truncation=True,padding='longest',max_length=60, return_tensors="pt").to(torch_device)
         translated = model.generate(**batch,max_length=60,num_beams=10, num_return_sequences=num_return_sequences, temperature=1.5)
         tgt_text = tokenizer.batch_decode(translated, skip_special_tokens=True)
-        #return tgt_text
-        
-        out = tokenizer.batch_decode(tgt_text, skip_special_tokens=True)  
-        st.write('', str(out).strip('][\'')) 
+        #return tgt_text        
+        #out = tokenizer.batch_decode(tgt_text, skip_special_tokens=True)  
+        #st.write('', str(tgt_text).strip('][\'')) 
+        st.write('', str(tgt_text))
         #st.write(tgt_text)
 
 
