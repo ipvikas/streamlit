@@ -23,12 +23,12 @@ if st.button('Text to SPEECH'):#for streamlit
         #with open('text', 'r') as file:
         data = text.read().replace('\n', '')
         
-      fhand = data.replace("\ufeff", "")
-      fhand[0:100]
-      t1 = gtts.gTTS(fhand,lang = 'hi')
-      # save the audio file
-      t1.save("welcome.mp3")
-      from IPython.display import Audio
-      st.wrtite(Audio('welcome.mp3'))
+        fhand = data.replace("\ufeff", "")
+        fhand[0:100]
+        t1 = gtts.gTTS(fhand,lang = 'hi')
+          # save the audio file
+        t1.save("welcome.mp3")
+        from IPython.display import Audio
+        st.wrtite(Audio('welcome.mp3'))
       
 else: pass
