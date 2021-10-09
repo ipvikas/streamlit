@@ -20,9 +20,8 @@ if st.button('Text to SPEECH'):#for streamlit
       #for streamlit
       st.write('Please enter Hindi text for translation') #for streamlit
     else:
-      with open('text', 'r') as file:
-        
-        data = file.read().replace('\n', '')
+        #with open('text', 'r') as file:
+        data = text.read().replace('\n', '')
         
       fhand = data.replace("\ufeff", "")
       fhand[0:100]
