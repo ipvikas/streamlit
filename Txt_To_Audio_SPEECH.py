@@ -22,7 +22,7 @@ if st.button('Text to SPEECH'):#for streamlit
     else:
         
         #with open('text', 'r') as file:
-        data = text.read().replace('\n', '')
+        data = text.replace('\n', '')
         
         fhand = data.replace("\ufeff", "")
         fhand[0:100]
