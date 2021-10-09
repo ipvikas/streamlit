@@ -14,7 +14,7 @@ def download_model():
     tokenizer = MBart50Tokenizer.from_pretrained(model_name)
     return model, tokenizer
 
-st.title('Hindi to English Translator')
+st.title('ANY language to English Translator')
 text = st.text_area("Enter Text:", value='', height=None, max_chars=None, key=None)
 model, tokenizer = download_model()
 
