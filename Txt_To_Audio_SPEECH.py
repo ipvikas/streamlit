@@ -17,16 +17,17 @@ text = st.text_area("Enter Text:", value='', height=None, max_chars=None, key=No
 st.write("This Web App is to help listening the text")
 if st.button('Text to SPEECH'):#for streamlit
     if text == '':
-      #for streamlit
-      st.write('Please enter Hindi text for translation') #for streamlit
+        #for streamlit
+        st.write('Please enter Hindi text for translation') #for streamlit
     else:
+        
         #with open('text', 'r') as file:
         data = text.read().replace('\n', '')
         
         fhand = data.replace("\ufeff", "")
         fhand[0:100]
         t1 = gtts.gTTS(fhand,lang = 'hi')
-          # save the audio file
+        # save the audio file
         t1.save("welcome.mp3")
         from IPython.display import Audio
         st.wrtite(Audio('welcome.mp3'))
