@@ -1,6 +1,6 @@
-!pip install playsound  
-!pip install pyttsx3  
-!pip install gTTS
+#!pip install playsound  
+#!pip install pyttsx3  
+#!pip install gTTS
 import gtts  
 
 import streamlit as st
