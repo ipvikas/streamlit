@@ -28,17 +28,24 @@ if st.button('Text to SPEECH'):#for streamlit
         fhand[0:100]
         t1 = gtts.gTTS(fhand,lang = 'hi')
         # save the audio file
-        t1.save("https://github.com/ipvikas/streamlit/welcome.mp3")
+        #t1.save("welcome.mp3") 
+        #from IPython.display import Audio
+        #Audio('welcome.mp3')
         
-        git add 'https://github.com/ipvikas/streamlit/welcome.mp3'
-        git commit -m 'Audio file added"
         
-        from IPython.display import Audio
-        Audio('https://github.com/ipvikas/streamlit/welcome.mp3')
+        from gtts import gTTS
+        from tempfile import TemporaryFile
+        #tts = gTTS(text='Hello', lang='en')
+        f = TemporaryFile()
+        t1.write_to_fp(f)
+        Play f
+        #f.close()
+
+
         
-        audio_file = open(‘https://github.com/ipvikas/streamlit/welcome.mp3’, ‘rb’)
+        audio_file = open(f, ‘rb’)
         audio_bytes = audio_file.read()
         st.audio(audio_bytes, format=‘audio/ogg’)       
-        
+        f.close()
       
 else: pass
