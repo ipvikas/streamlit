@@ -38,7 +38,7 @@ if st.button('Text to SPEECH'):#for streamlit
         #tts = gTTS(text='Hello', lang='en')
         f = TemporaryFile()
         t1.write_to_fp(f)
-        Play f
+        #Play f
         #f.close()
 
 
