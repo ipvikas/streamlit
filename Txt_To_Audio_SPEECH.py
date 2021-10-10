@@ -30,7 +30,11 @@ if st.button('Text to SPEECH'):#for streamlit
         # save the audio file
         t1.save("welcome.mp3")
         from IPython.display import Audio
-        
         Audio('welcome.mp3')
+        
+        audio_file = open(‘welcome.mp3’, ‘rb’)
+        audio_bytes = audio_file.read()
+        st.audio(audio_bytes, format=‘audio/ogg’)       
+        
       
 else: pass
