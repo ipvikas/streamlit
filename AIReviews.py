@@ -7,7 +7,7 @@
 #! pip install transformers
 #! pip install SentencePiece
 
-#import torch
+import torch
 from transformers import PegasusForConditionalGeneration, PegasusTokenizer
 import streamlit as st
 
