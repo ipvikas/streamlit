@@ -16,3 +16,4 @@ SentencePiece
 #tensorflow
 #tensorflow-cpu
 #h5py==2.10.0
+from transformers import MBartForConditionalGeneration, MBart50Tokenizer
